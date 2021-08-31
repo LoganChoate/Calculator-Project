@@ -66,7 +66,7 @@ function Handle_Operator(Next_Operator) {
          * in the Perform_Calculation object and the function that matches the
          * operator is excecuted
          */
-        let result = Perform_Calculation[operator]{Value_Now, Value_of_Input};
+        let result = Perform_Calculation[operator] (Value_Now, Value_of_Input);
         /**Here we add a fixed amount of numbers after the decimal */
         result = Number(result).toFixed(9)
         /**This will remove any trailing 0's */
@@ -74,17 +74,18 @@ function Handle_Operator(Next_Operator) {
         Calculator.Display_Value = parseFloat(result);
         Calculator.First_Operand = parseFloat(result);
     }
+    Calculator.Wait_Second_Operand = true;
+    Calculator.operator = Next_Operator;
 }
-Calculator.Wait_Second_Operand = true;
-Calculator.operator = Next_Operator;
+
 
 /**This code defines the Perfom_Calculation function */
 const Perfom_Calculation = {
-    '/':(First_Operand, Second_Operand) => First_Operand / Second_Operand,
-    '*':(First_Operand, Second_Operand) => First_Operand * Second_Operand,
-    '+':(First_Operand, Second_Operand) => First_Operand + Second_Operand,
-    '-':(First_Operand, Second_Operand) => First_Operand - Second_Operand,
-    '=':(First_Operand, Second_Operand) => Second_Operand,
+    '/': (First_Operand, Second_Operand) => First_Operand / Second_Operand,
+    '*': (First_Operand, Second_Operand) => First_Operand * Second_Operand,
+    '+': (First_Operand, Second_Operand) => First_Operand + Second_Operand,
+    '-': (First_Operand, Second_Operand) => First_Operand - Second_Operand,
+    '=': (First_Operand, Second_Operand) => Second_Operand
 };
 
 function Calculator_Reset() {
