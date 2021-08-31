@@ -60,7 +60,7 @@ function Handle_Operator(Next_Operator) {
     }
     if (First_Operand == null) {
         Calculator.First_Operand = Value_of_Input;
-    } else if (operator) {//checks if an iperator already exists}
+    } else if (operator) {//checks if an iperator already exists
         const Value_Now = First_Operand || 0;
         /**If operator exists, property lookup is preformed for the operator
          * in the Perform_Calculation object and the function that matches the
