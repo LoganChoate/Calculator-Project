@@ -80,7 +80,7 @@ function Handle_Operator(Next_Operator) {
 
 
 /**This code defines the Perfom_Calculation function */
-const Perfom_Calculation = {
+const Perform_Calculation = {
     '/': (First_Operand, Second_Operand) => First_Operand / Second_Operand,
     '*': (First_Operand, Second_Operand) => First_Operand * Second_Operand,
     '+': (First_Operand, Second_Operand) => First_Operand + Second_Operand,
